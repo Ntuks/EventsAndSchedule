@@ -5,7 +5,6 @@ import com.example.eventsandschedule.data.remote.ScheduleApi
 import com.example.eventsandschedule.domain.schedule.ScheduleItem
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runTest
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -32,7 +31,7 @@ class ScheduleApiTest {
     fun setUp() {
         server = MockWebServer()
         service = Retrofit.Builder()
-            .baseUrl(server.url("http://locahost:8080/"))
+            .baseUrl(server.url(""))
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
             .create(ScheduleApi::class.java)
