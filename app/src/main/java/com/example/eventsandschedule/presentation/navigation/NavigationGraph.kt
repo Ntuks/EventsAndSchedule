@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.eventsandschedule.presentation.events.EventVideoScreen
 import com.example.eventsandschedule.presentation.events.EventsScreen
+import com.example.eventsandschedule.presentation.schedule.ScheduleScreen
 
 @Composable
 fun NavigationSetup(navController: NavHostController) {
@@ -14,7 +15,7 @@ fun NavigationSetup(navController: NavHostController) {
             EventsScreen(navController)
         }
         composable(Screen.Schedule.route) {
-            EventsScreen(navController)
+            ScheduleScreen(navController)
         }
         composable(Screen.EventVideo.route) {
             EventVideoScreen()

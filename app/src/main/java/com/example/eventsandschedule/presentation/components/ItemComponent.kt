@@ -14,14 +14,15 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import com.example.eventsandschedule.domain.events.EventItem
+import com.example.eventsandschedule.presentation.models.Item
 
 @Preview
 @Composable
 fun Item(
-    @PreviewParameter(PreviewItemProvider::class) event: EventItem,
+    @PreviewParameter(PreviewItemProvider::class) item: Item,
     modifier: Modifier = Modifier
 ) {
-    val painter = rememberAsyncImagePainter(model = event.imageUrl)
+    val painter = rememberAsyncImagePainter(model = item.imageUrl)
 
     Card(modifier = Modifier.fillMaxSize()) {
         Row(modifier = Modifier.fillMaxSize()) {
@@ -34,14 +35,14 @@ fun Item(
             )
             Column(modifier = Modifier.padding(16.dp)) {
                 Text(
-                    text = event.title,
+                    text = item.title,
                     style = MaterialTheme.typography.h6,
                     color = MaterialTheme.colors.onSurface,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
                 Text(
-                    text = event.subtitle,
+                    text = item.subtitle,
                     style = MaterialTheme.typography.body1,
                     color = MaterialTheme.colors.onSurface,
                     maxLines = 10,
@@ -49,7 +50,7 @@ fun Item(
                 )
                 Spacer(modifier = Modifier.height(20.dp))
                 Text(
-                    text = event.date,
+                    text = item.date,
                     style = MaterialTheme.typography.body1,
                     color = MaterialTheme.colors.onSurface,
                     maxLines = 10,

@@ -1,6 +1,6 @@
 package com.example.eventsandschedule.presentation.events
 
-import com.example.eventsandschedule.domain.events.EventItem
+import com.example.eventsandschedule.presentation.models.EventItem
 
 data class EventsState(
     val eventsList: List<EventItem> = emptyList(),
