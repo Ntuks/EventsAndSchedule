@@ -16,5 +16,4 @@ class FakeEventsRepository: EventsRepository {
        } else Result.Error("Error getting events")
     }
 
-
 }

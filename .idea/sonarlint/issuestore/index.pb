@@ -54,10 +54,6 @@ Xapp/src/main/java/com/example/eventsandschedule/presentation/navigation/BottomN
 Oapp/src/main/java/com/example/eventsandschedule/common/components/ShowLoader.kt,3\c\3ce754a27d94eefc4afed07615aecf298372e7c1
 é
 ^app/src/main/java/com/example/eventsandschedule/presentation/navigation/BottomNavigationBar.kt,d\4\d4df246a943d828e934a71e2d66a494c5bb0d4fa
-Ü
-Vapp/src/main/java/com/example/eventsandschedule/presentation/schedule/ScheduleState.kt,4\a\4aa69dca041c825c63f4e28011f4a6e7fc328a24
-ä
-Zapp/src/main/java/com/example/eventsandschedule/presentation/schedule/ScheduleViewModel.kt,1\b\1b05a2a13e2d47c0641b69526d4c6e1d87c349ec
 á
 Wapp/src/main/java/com/example/eventsandschedule/presentation/schedule/ScheduleScreen.kt,a\6\a65f56a85167f14b204edd4f1b12b5b254b989a8
 Å
@@ -68,5 +64,3 @@ Wapp/src/main/java/com/example/eventsandschedule/presentation/events/EventVideoS
 Zapp/src/main/java/com/example/eventsandschedule/presentation/navigation/NavigationGraph.kt,c\1\c1591b7a8fbfcc0b557abc8f27d5b577b3d9d909
 É
 Sapp/src/main/java/com/example/eventsandschedule/presentation/events/EventsScreen.kt,d\d\dd060f1d3f5703c85a31f7029492906cd57fde48
-á
-Wapp/src/test/java/com/example/eventsandschedule/data/repository/FakeEventsRepository.kt,7\3\73f15535537f2a81e35aa1f259abc6a25ba855d3

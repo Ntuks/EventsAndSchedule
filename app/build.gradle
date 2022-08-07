@@ -144,7 +144,10 @@ dependencies {
 
     //Mock Server
     testImplementation "com.squareup.okhttp3:mockwebserver:4.10.0"
-//    testImplementation "com.squareup.okhttp3:okhttp:4.10.0"
+
+    // Coroutine
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1"
 
     //Truth
     testImplementation "com.google.truth:truth:1.1.3"

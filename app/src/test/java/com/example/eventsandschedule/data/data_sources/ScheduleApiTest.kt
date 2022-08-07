@@ -4,7 +4,9 @@ import androidx.test.filters.SmallTest
 import com.example.eventsandschedule.data.remote.ScheduleApi
 import com.example.eventsandschedule.domain.schedule.ScheduleItem
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.test.runTest
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okio.buffer
@@ -18,6 +20,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.io.IOException
 
+@ExperimentalCoroutinesApi
 @SmallTest
 @RunWith(JUnit4::class) 
 class ScheduleApiTest {
@@ -29,7 +32,7 @@ class ScheduleApiTest {
     fun setUp() {
         server = MockWebServer()
         service = Retrofit.Builder()
-            .baseUrl(server.url(""))
+            .baseUrl(server.url("http://locahost:8080/"))
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
             .create(ScheduleApi::class.java)
@@ -52,12 +55,14 @@ class ScheduleApiTest {
     }
 
     @Test
-    fun `Get Schedule`() {
-        runBlocking {
+    fun `Given no network issues, getSchedule() should get Schedule Items successfully`() {
+        runTest {
             // Prepare fake response
             enqueueMockResponse("ScheduleResponse.json")
+
             //Send Request to the MockServer
             val responseBody = service.getSchedule()
+
             //Request received by the mock server
             val request = server.takeRequest()
             assertThat(responseBody).isNotNull()
