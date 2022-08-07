@@ -56,13 +56,10 @@ class ScheduleApiTest {
     @Test
     fun `Given no network issues, getSchedule() should get Schedule Items successfully`() {
         runTest {
-            // Prepare fake response
             enqueueMockResponse("ScheduleResponse.json")
 
-            //Send Request to the MockServer
             val responseBody = service.getSchedule()
 
-            //Request received by the mock server
             val request = server.takeRequest()
             assertThat(responseBody).isNotNull()
             assertThat(responseBody.first()).isEqualTo(
