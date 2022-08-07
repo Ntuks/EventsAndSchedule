@@ -1,4 +1,4 @@
-package com.example.eventsandschedule.presentation.components
+package com.example.eventsandschedule.common.components
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import com.example.eventsandschedule.domain.events.EventItem

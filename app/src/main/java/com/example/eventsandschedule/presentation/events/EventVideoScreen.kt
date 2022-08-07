@@ -21,6 +21,12 @@ fun EventVideoScreen() {
             .padding(16.dp)
             .padding(bottom = 20.dp)
     ) {
-       Text(text = "Video will be shown here")
+       Text(
+           text = "Video will be shown here",
+           modifier = Modifier
+               .fillMaxSize()
+               .padding(16.dp)
+               .padding(bottom = 20.dp)
+       )
     }
 }

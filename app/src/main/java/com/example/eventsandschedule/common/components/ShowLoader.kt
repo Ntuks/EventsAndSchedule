@@ -1,4 +1,4 @@
-package com.example.eventsandschedule.presentation.components
+package com.example.eventsandschedule.common.components
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize

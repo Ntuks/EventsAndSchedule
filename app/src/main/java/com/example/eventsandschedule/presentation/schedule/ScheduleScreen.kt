@@ -13,8 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.example.eventsandschedule.presentation.components.Item
-import com.example.eventsandschedule.presentation.components.ShowLoader
+import com.example.eventsandschedule.common.components.Item
+import com.example.eventsandschedule.common.components.ShowLoader
 
 @Composable
 fun ScheduleScreen(

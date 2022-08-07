@@ -1,4 +1,4 @@
-package com.example.eventsandschedule.presentation.components
+package com.example.eventsandschedule.common.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -13,7 +13,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
-import com.example.eventsandschedule.domain.events.EventItem
 import com.example.eventsandschedule.presentation.models.Item
 
 @Preview
