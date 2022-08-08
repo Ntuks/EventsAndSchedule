@@ -30,7 +30,6 @@ fun VideoPlayer(eventVideoUrl: String) {
     ) {
         val mContext = LocalContext.current
 
-        // Declaring ExoPlayer
         val mExoPlayer = remember(mContext) {
             ExoPlayer.Builder(mContext).build().apply {
                 val dataSourceFactory = DefaultDataSourceFactory(
@@ -43,7 +42,6 @@ fun VideoPlayer(eventVideoUrl: String) {
             }
         }
 
-        // Implementing ExoPlayer
         AndroidView(factory = { context ->
             PlayerView(context).apply {
                 player = mExoPlayer
