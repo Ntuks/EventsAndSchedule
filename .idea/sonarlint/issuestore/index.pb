@@ -57,5 +57,3 @@ o
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 ‚
 Rapp/src/main/java/com/example/eventsandschedule/presentation/events/EventsState.kt,c\4\c4c11d42d7f8a5d679b3804d5c44d64889653a25
-Š
-Zapp/src/test/java/com/example/eventsandschedule/presentation/events/EventsViewModelTest.kt,f\c\fc2de5eadb65f6036aefb2837a47a842f17af263

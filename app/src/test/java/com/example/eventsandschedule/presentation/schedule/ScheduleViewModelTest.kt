@@ -1,6 +1,7 @@
 package com.example.eventsandschedule.presentation.schedule
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.example.eventsandschedule.common.utils.format
 import com.example.eventsandschedule.data.repository.FakeScheduleRepository
 import com.example.eventsandschedule.presentation.models.ScheduleItem
 import com.example.eventsandschedule.presentation.CoroutineDispatcherRule
@@ -9,6 +10,8 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
+import java.text.SimpleDateFormat
+import java.util.*
 
 @ExperimentalCoroutinesApi
 class ScheduleViewModelTest {
@@ -21,17 +24,19 @@ class ScheduleViewModelTest {
 
     @Test
     fun `Given API success, getSchedule() should get Schedule Items successfully` () = runTest {
-        val expectedScheduleState = ScheduleState(
-            schedule = listOf(
-                ScheduleItem(
-                    id = "1",
-                    title = "Liverpool v Porto",
-                    subtitle = "UEFA Champions League",
-                    date = "2022-08-02T01:09:57.087Z",
-                    imageUrl = "https://firebasestorage.googleapis.com/v0/b/dazn-recruitment/o",
-                )
-            )
+        var item = ScheduleItem(
+            id = "0",
+            title = "Liverpool v Porto",
+            subtitle = "UEFA Champions League",
+            date = "2022-08-02T01:09:57.087Z",
+            imageUrl = "https://firebasestorage.googleapis.com/v0/b/dazn-recruitment/o",
         )
+
+        val formatter = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
+        val date = formatter.parse(item.date)
+        val calendar = Calendar.getInstance().apply { time = date as Date }
+        item = item.copy(date = calendar.format())
+        val expectedScheduleState = ScheduleState(schedule = listOf(item))
 
         val fakeRepository = FakeScheduleRepository()
         val viewModel = ScheduleViewModel(fakeRepository)
