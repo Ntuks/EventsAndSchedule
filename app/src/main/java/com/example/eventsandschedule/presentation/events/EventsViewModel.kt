@@ -6,9 +6,10 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.eventsandschedule.common.utils.Result
+import com.example.eventsandschedule.common.utils.toDateLong
 import com.example.eventsandschedule.domain.events.EventItem
 import com.example.eventsandschedule.domain.repository.EventsRepository
-import com.example.eventsandschedule.common.utils.toDateLong
+import com.example.eventsandschedule.presentation.mappers.topUIEventItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -41,14 +42,11 @@ class EventsViewModel @Inject constructor(
                 }
                 is Result.Success -> {
                     val data = result.data as List<EventItem>
-                    data.sortedBy{ it.date.toDateLong() }.map {
+                    val events = data.map { it.topUIEventItem() }
+                    events.sortedBy{ it.date.toDateLong() }.map {
                         // format the date for extra points
                     }
-                    state = state.copy(
-                        eventsList =  data,
-                        isLoading = false,
-                        errorMessage = null
-                    )
+                    state = state.copy(eventsList = events, isLoading = false, errorMessage = null)
                 }
             }
         }

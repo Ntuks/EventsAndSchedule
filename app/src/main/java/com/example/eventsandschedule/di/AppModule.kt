@@ -2,10 +2,12 @@ package com.example.eventsandschedule.di
 
 import com.example.eventsandschedule.BuildConfig
 import com.example.eventsandschedule.data.remote.EventsApi
+import com.example.eventsandschedule.data.remote.ScheduleApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.create
@@ -25,5 +27,9 @@ object AppModule {
     @Singleton
     @Provides
     fun provideEventsApi(): EventsApi = provideRetrofitBuilder().build().create()
+
+    @Singleton
+    @Provides
+    fun provideScheduleApi(): ScheduleApi = provideRetrofitBuilder().build().create()
 
 }

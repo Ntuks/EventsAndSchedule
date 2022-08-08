@@ -17,7 +17,7 @@ class EventsRepositoryImpl @Inject constructor(
             )
         } catch(e: Exception) {
             e.printStackTrace()
-            Result.Error(e.message ?: "An unknown error occurred.")
+            Result.Error(e.message ?: "An unknown error occurred  trying to get Events.")
         }
     }
 }

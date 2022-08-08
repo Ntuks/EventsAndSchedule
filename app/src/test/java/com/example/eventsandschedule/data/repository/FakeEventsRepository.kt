@@ -11,7 +11,9 @@ class FakeEventsRepository: EventsRepository {
     private var shouldReturnNetworkError = false
 
     override suspend fun getEvents(): Result<List<EventItem>> {
-        TODO("Not yet implemented")
+       return if (shouldReturnNetworkError){
+           Result.Success(events)
+       } else Result.Error("Error getting events")
     }
 
 }
