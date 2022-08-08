@@ -1,11 +1,6 @@
 
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-@
-environments.env,5\0\5028170f0e92042947d4087666572e1916033d30
 q
 Aapp/src/main/java/com/example/eventsandschedule/ui/theme/Color.kt,4\c\4c62c13c7c63caf6f94190fa67d3113a86713e5a
 P
