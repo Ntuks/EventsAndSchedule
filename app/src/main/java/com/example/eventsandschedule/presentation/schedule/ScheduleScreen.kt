@@ -12,13 +12,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import com.example.eventsandschedule.common.components.Item
 import com.example.eventsandschedule.common.components.ShowLoader
 
 @Composable
 fun ScheduleScreen(
-    navController: NavController,
     viewModel: ScheduleViewModel = hiltViewModel()
 ) {
     val state = viewModel.state

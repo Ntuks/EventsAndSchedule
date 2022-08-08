@@ -15,7 +15,7 @@ fun NavigationSetup(navController: NavHostController) {
             EventsScreen(navController)
         }
         composable(Screen.Schedule.route) {
-            ScheduleScreen(navController)
+            ScheduleScreen()
         }
         composable(Screen.EventVideo.route) {
             EventVideoScreen()

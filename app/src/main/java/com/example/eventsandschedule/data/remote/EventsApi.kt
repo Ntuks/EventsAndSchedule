@@ -1,6 +1,5 @@
 package com.example.eventsandschedule.data.remote
 
-import com.example.eventsandschedule.common.utils.Result
 import com.example.eventsandschedule.domain.events.EventItem
 import retrofit2.http.GET
 
