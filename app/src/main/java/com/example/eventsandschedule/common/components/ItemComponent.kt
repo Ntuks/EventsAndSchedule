@@ -23,7 +23,7 @@ fun Item(
 ) {
     val painter = rememberAsyncImagePainter(model = item.imageUrl)
 
-    Card(modifier = Modifier.fillMaxSize()) {
+    Card(modifier = modifier) {
         Row(modifier = Modifier.fillMaxSize()) {
             Image(
                 painter = painter,

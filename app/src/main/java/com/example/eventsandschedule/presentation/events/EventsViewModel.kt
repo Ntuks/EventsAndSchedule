@@ -6,12 +6,15 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.eventsandschedule.common.utils.Result
+import com.example.eventsandschedule.common.utils.format
 import com.example.eventsandschedule.common.utils.toDateLong
 import com.example.eventsandschedule.domain.events.EventItem
 import com.example.eventsandschedule.domain.repository.EventsRepository
 import com.example.eventsandschedule.presentation.mappers.topUIEventItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -42,9 +45,17 @@ class EventsViewModel @Inject constructor(
                 }
                 is Result.Success -> {
                     val data = result.data as List<EventItem>
-                    val events = data.map { it.topUIEventItem() }
-                    events.sortedBy{ it.date.toDateLong() }.map {
+                    var events = data.map { it.topUIEventItem() }
+                    events = events.sortedBy{ it.date.toDateLong() }.mapIndexed { index, item ->
                         // format the date for extra points
+                        val formatter = SimpleDateFormat(
+                            "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                            Locale.getDefault()
+                        )
+                        val date = formatter.parse(item.date)
+                        val calendar = Calendar.getInstance().apply { time = date as Date }
+
+                        item.copy(id = index.toString(), date = calendar.format())
                     }
                     state = state.copy(eventsList = events, isLoading = false, errorMessage = null)
                 }

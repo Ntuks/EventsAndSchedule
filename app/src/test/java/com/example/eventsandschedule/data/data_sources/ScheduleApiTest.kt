@@ -56,7 +56,7 @@ class ScheduleApiTest {
     @Test
     fun `Given no network issues, getSchedule() should get Schedule Items successfully`() {
         runTest {
-            enqueueMockResponse("ScheduleResponse.json")
+            enqueueMockResponse("SampleResponse.json")
 
             val responseBody = service.getSchedule()
 
